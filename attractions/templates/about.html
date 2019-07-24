@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>Disney Parks Database</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{% static 'attractions/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <html lang="en" dir="ltr">
+  <div class="page-header">
+    <br>
+    <h1 id="welcome">About This Site</h1>
+  <nav class="navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active" id="top-nav"><a href="/"  id="top-nav">Home</a></li>
+        <li class="active" id="top-nav"><a href="/advanced_search" id="top-nav">Advanced Search</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Magic Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_mk/"> General Information</a></li>
+            <li><a href="/magic_kingdom">All Attractions</a></li>
+            <li><a href="#">All Restaurants</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Epcot
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ep/"> General Information</a></li>
+            <li><a href="/epcot">All Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Hollywood Studios
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_hs/"> General Information</a></li>
+            <li><a href="/hollywood_studios">All Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Animal Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ank/"> General Information</a></li>
+            <li><a href="/animal_kingdom">All Attractions</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<p class="text-center">Here you can find any general information you need concerning the construction of the DPD</p>
+<h3>The Author</h3>
+<p>Ginnie White created this site mostly for her own personal use and reserves the right to the DPD. All opinions expressed on the site are her own</p>
+<h3>The Backend and Site Construction</h3>
+The Disney Parks Database uses Django to run its actual database. All images used on this site belong either to Ginnie White or were free to use for all purposes.
+<h3>The Data</h3>
+<p>All data found on this site comes directly from official Disney sources. You can find the information <a href="https://disneyworld.disney.go.com/attractions/"> here </a>if you would like an alternative presentation.
+All attraction and park names belong to either Disney, or to another licence. Ginnie owns nothing.</p>

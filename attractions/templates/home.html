@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Disney Parks Database</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'attractions/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron" id="custom-jumbotron">
+      <h1 id="main">Disney Parks Database</h1>
+    </div>
+    <nav class="navbar navbar-custom" style="">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li class="active" id="top-nav"><a href="/advanced_search"  id="top-nav">Advanced Search</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Magic Kingdom
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/about_mk/"> General Information</a></li>
+              <li><a href="/magic_kingdom"> All Attractions</a></li>
+              <li><a href="#">All Restaurants</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Epcot
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/about_ep/"> General Information</a></li>
+              <li><a href="/epcot">All Attractions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Hollywood Studios
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/about_hs/"> General Information</a></li>
+              <li><a href="/hollywood_studios">All Attractions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Animal Kingdom
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/about_ank/"> General Information</a></li>
+              <li><a href="/animal_kingdom">All Attractions</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+</nav>
+<div class="container-fluid" id="homediv">
+  <h1 id="welcome">Welcome!</h1>
+  <div class="row">
+      <p>The DPD exists as a repository of Disney World knowledge. Here you can find basic knowledge about the four Floridian parks and their attractions.</p>
+    <div class="col-4">
+      <div class="text-center">
+        <img class="img-responsive center-block" src="{% static "attractions/walt-disney-world-1247595_1920.jpg" %}" alt="My image">
+      </div>
+    </div>
+</div>
+  <br>
+  <a class="btn btn-primary" href="/about/">About This Site</a>
+  <br>
+  <br>
+  <p> </p>
+</div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <title>Disney Parks Database</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'attractions/style.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <html lang="en" dir="ltr">
+  <div class="page-header">
+    <br>
+    <h1 id="welcome">Advanced Search</h1>
+  <nav class="navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active" id="top-nav"><a href="/"  id="top-nav">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Magic Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_mk/"> General Information</a></li>
+            <li><a href="/magic_kingdom">Attractions</a></li>
+            <li><a href="#">Restaurants</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Epcot
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ep/"> General Information</a></li>
+            <li><a href="/epcot">Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Hollywood Studios
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_hs/"> General Information</a></li>
+            <li><a href="/hollywood_studios">Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Animal Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ank/"> General Information</a></li>
+            <li><a href="/animal_kingdom">Attractions</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+  </nav>
+  <p></p>
+  <div class="container" id="homediv">
+    <form method='POST' action="results/">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+    <a class="btn" href="#top">Back to top</a>
+    </body>
+</nav>

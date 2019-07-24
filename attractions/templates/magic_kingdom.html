@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>Disney Parks Database</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="{% static 'attractions/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <html lang="en" dir="ltr">
+  <div class="page-header">
+    <br>
+    <h1 id="welcome">All Magic Kingdom Attractions</h1>
+    <p style="text-align:center;">Opened in 1971, the Magic Kingdom is the star park of Walt Disney World and the most visited theme park in the world.</p>
+  </div>
+  <nav class="navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active" id="top-nav"><a href="/"  id="top-nav">Home</a></li>
+        <li class="active" id="top-nav"><a href="/advanced_search" id="top-nav">Advanced Search</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Magic Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_mk/"> General Information</a></li>
+            <li><a href="/magic_kingdom">All Attractions</a></li>
+            <li><a href="#">All Restaurants</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Epcot
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ep/"> General Information</a></li>
+            <li><a href="/epcot">All Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Hollywood Studios
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_hs/"> General Information</a></li>
+            <li><a href="/hollywood_studios">All Attractions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="top-nav">Animal Kingdom
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about_ank/"> General Information</a></li>
+            <li><a href="/animal_kingdom">All Attractions</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<p></p>
+    {% block content %}
+    <table class="table table-striped table-bordered">
+        <tr>
+        <th>Name</th>
+        <th>Height Requirement</th>
+        <th>Tags</th>
+        <th>Has Fastpass+?</th>
+        <th>Land</th>
+      </tr>
+        {% for ride in Attractions %}
+        <tr>
+        <td><a href="/attraction/{{ ride.attraction_name }}">{{ride.attraction_name}}</a></td>
+        <td>{{ ride.height_req }}</td>
+        <td>{{ ride.tags }}</td>
+        <td>{{ ride.fastpass }}</td>
+        <td>{{ ride.area }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+    <a class="btn" href="#top">Back to top</a>
+    </body>
+</html>

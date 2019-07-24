@@ -1,0 +1,71 @@
+#centralnav {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+#custom-jumbotron{
+  width:100%;
+  margin-bottom:0px; !important
+  margin-top: 0;
+  margin:0;
+  background-color:#DDF0F4;!important
+  text-align:center; !important
+}
+
+.navbar-custom {
+  background-color: #1d96d7; !important
+  margin-top:0px; !important
+  margin-bottom: 0px; !important
+ }
+
+.navbar{
+  margin-bottom: 0px; !important
+  margin-top: 0px;!important
+}
+
+.img-responsive {
+  height:100%;
+  width:100%;
+  text-align: center;
+}
+
+.img-div{
+  width:350px;
+  height:240px;
+  text-align: center;
+}
+
+#welcome{
+  text-align:center;
+}
+
+#top-nav{
+  color: white;
+}
+
+#homediv{
+  text-align: center;
+  display: inline-block
+}
+
+#top2{
+  color:white;
+  background-color: #006e99;
+}
+
+#main-heading{
+  margin-bottom: 0px;!important
+  margin-top: 0px;!important
+  font-family: "Times New Roman", Times, serif;!important
+  text-align: center;
+}
+
+.form-inline{
+  padding-top: 8px;
+  float:right;
+}
+
+.h1{
+    font-family: serif;
+}
