@@ -13,6 +13,10 @@
   text-align:center; !important
 }
 
+a:hover {
+  background-color: yellow;!important
+}
+
 .navbar-custom {
   background-color: #1d96d7; !important
   margin-top:0px; !important
@@ -22,6 +26,11 @@
 .navbar{
   margin-bottom: 0px; !important
   margin-top: 0px;!important
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    color: pink;
 }
 
 .img-responsive {

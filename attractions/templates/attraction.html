@@ -56,3 +56,30 @@
         </form>
     </div>
 </nav>
+<div class="container">
+  <div class="row">
+    <h3>Basic Information<h3>
+      {% block content %}
+      <table class="table table-striped table-bordered">
+          <tr>
+          <th>Height Requirement</th>
+          <th>Tags</th>
+          <th>Has Fastpass+?</th>
+          <th>Land</th>
+        </tr>
+          <tr>
+          <td>{{ Attraction.height_req }}</td>
+          <td>{{ Attraction.tags }}</td>
+          <td>{{ Attraction.fastpass }}</td>
+          <td>{{ Attraction.area }}</td>
+          </tr>
+      </table>
+      {% endblock %}
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row">
+    <h3>Notes From the Field</h3>
+    <p>{{ Attraction.notes }}</p>
+  </div>
+</div>
