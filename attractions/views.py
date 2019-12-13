@@ -22,6 +22,16 @@ def home(request):
                 notes=row[6])
             # creates a tuple of the new object or
             # current object and a boolean of if it was created
+    if 'search' in request.GET:
+        name =  request.GET.get('search')
+        try:
+            attraction_list = Attraction.objects.filter(attraction_name=name)
+            print(attraction)
+            #working okay up to here.need to add ability to search for part of name?
+            return render(request,"results.html",{"Results":attraction_list})
+        except:
+            print("Did not find the attraction")
+            return render(request, 'home.html')
     return render(request,'home.html')
 
 def advanced_search(request):
