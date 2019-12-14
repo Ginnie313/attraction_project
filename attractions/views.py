@@ -36,27 +36,18 @@ def home(request):
     return render(request,'home.html')
 
 def advanced_search(request):
-
-    '''
-        # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = AttractionForm(request.POST)
-        print("benchmark 1")
-        # check whether it's valid:
-        if form.is_valid():
-            print("benchmark 2")
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            name = form.cleaned_data['attraction_name']
-            s_results = Attraction.objects.filter(attraction_name=name)
-            print(s_results)
-            return render('results.html', {'Results':s_results})
-    else:
-        form = AttractionForm()
-
-    '''
+    #top nav search bar
+    if 'search' in request.GET:
+        name =  request.GET.get('search')
+        try:
+            #Here the icontains gets any attraction with the text in the name
+            attraction_list = Attraction.objects.filter(attraction_name__icontains=name)
+            print(attraction)
+            #working okay up to here.need to add ability to search for part of name?
+            return render(request,"results.html",{"Results":attraction_list})
+        except:
+            print("Some sort of error occured")
+            return render(request, 'advanced_search.html')
     #note: just kinda randomly stopped working then started again?
     #Did the user ask for a name?
     if 'q1' in request.GET:
