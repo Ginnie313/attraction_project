@@ -59,6 +59,19 @@
     </div>
   </nav>
   <p></p>
+  <div class = "container">
+    <form method='GET' action="">
+      <input type = 'text' name = 'q1' placeholder = 'Name'>
+      <input type = 'text' name = 'q2' placeholder = "Height Requirement">
+      <select name = 'q3' size = '4' multiple>
+        <option value = ""></option>
+        <option value = "Classics">Classics</option>
+        <option value = "Indoor">Indoor</option>
+        <option value = "Slow Rides">Slow Rides</option>
+        </select>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
   <div class="container" id="homediv">
     <form method='POST' action="results/">
       {% csrf_token %}

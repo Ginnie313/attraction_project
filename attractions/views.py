@@ -36,6 +36,8 @@ def home(request):
     return render(request,'home.html')
 
 def advanced_search(request):
+
+    '''
         # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -53,7 +55,31 @@ def advanced_search(request):
             return render('results.html', {'Results':s_results})
     else:
         form = AttractionForm()
-    return render(request, "advanced_search.html", {'form': form})
+
+    '''
+    #note: just kinda randomly stopped working then started again?
+    #Did the user ask for a name?
+    if 'q1' in request.GET:
+        name = request.GET.get('q1')
+        print(name)
+    #Did the user ask for a height requirement?
+    if 'q2' in request.GET:
+        height = request.GET.get('q2')
+        print(height)
+    #Note, search for tags is currently only working for one tag at a time and you MUST choose a tag
+    #need to find implementation of default "" tag?
+    if 'q3' in request.GET:
+        tags = request.GET.get('q3')
+        print(tags)
+    try:
+        #Return the list of attractions that meet all parameters
+        attraction_list = Attraction.objects.filter(attraction_name__icontains=name, height_req__icontains=height, tags__icontains=tags)
+        return render(request,"results.html",{"Results":attraction_list})
+    except:
+        print("Some sort of error occured")
+        return render(request, 'advanced_search.html')
+
+    return render(request, "advanced_search.html")
 
 def about(request):
     if 'search' in request.GET:
@@ -62,7 +88,6 @@ def about(request):
             #Here the icontains gets any attraction with the text in the name
             attraction_list = Attraction.objects.filter(attraction_name__icontains=name)
             print(attraction)
-            #working okay up to here.need to add ability to search for part of name?
             return render(request,"results.html",{"Results":attraction_list})
         except:
             print("Some sort of error occured")
